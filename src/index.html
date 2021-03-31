@@ -5,35 +5,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.css" rel="stylesheet">
   <title>Filmoteka</title>
 </head>
 
 <body>
-  <header-home></header-home>
-  <gallery>
-    
+  <header>
+    <div class="header">
     <div class="container">
-      <ul class="gallery__list">
-    
-        <li class="list list__item">
-            <img
-                src="./images/intro.png"
-                alt="{{original_title}}"
-                class="poster__path"
-              />        
-            <div class="film__short__info">
-              <h2 class="title__card__film">GREYHOUND</h2>
-              <p class="genre__card__film genre__card__film__style">Drama, Action | 2020</p>
-            </div>
-        </li>
-
-      </ul>
+        <nav class="header-nav">
+            <a class="header-logo logo" href="./index.html">
+                <svg class="logo-icon" width="24" height="24">
+                   <use href="./images/icons/sprite.svg#logo"></use>
+                </svg>
+                <span class="logo-title link">Filmoteka</span>
+            </a>
+            <ul class="header-list list">
+                <li class="header-list-item">
+                    <a class="header-list-link link current" href="./index.html">Home</a>
+                </li>
+                <li class="header-list-item">
+                   <a class="header-list-link link" href="./library.html">my library</a>
+                </li>
+            </ul>
+        </nav>
+        <form class="search-form">
+                <input class="search-input" type="text" id="search-input" name="query" placeholder="Поиск фильмов">
+                <label class="search-form-label" for="search-input">Поиск фильмов
+                </label>
+                <svg class="search-icon" width="12px" height="12px">
+                    <use href="./images/icons/sprite.svg#search"><use>
+                </svg>
+        </form>
+        <p class="error">Search result not successful. Enter the correct movie name and</p>
     </div>
-  </gallery>
-  <modal-backdrop></modal-backdrop>
-  <footer></footer>
+</div>
+  </header>
+<gallery>
+    <div class="container">
+        <ul class="gallery-list">
+            
+                <li class="list list-item">
+                    <img
+                        src="./images/team-mykola.png"
+                        alt="{{original_title}}"
+                        class="poster-path"
+                    />        
+                    <div class="film-short-info">
+                        <h2 class="title-card-film">LITTLE WOMEN </h2>
+                        <p class="genre-card-film genre-card-film-style">Drama | 2019 <span class="rating-film">10.0</span></p>
+                    </div>
+                </li>
+                <li class="list list-item">
+                    <img
+                        src="./images/team-mykola.png"
+                        alt="{{original_title}}"
+                        class="poster-path"
+                    />        
+                    <div class="film-short-info">
+                        <h2 class="title-card-film">LITTLE WOMEN </h2>
+                        <p class="genre-card-film genre-card-film-style">Drama | 2019 <span class="rating-film">10.0</span></p>
+                    </div>
+                </li>
+                <li class="list list-item">
+                    <img
+                        src="./images/team-mykola.png"
+                        alt="{{original_title}}"
+                        class="poster-path"
+                    />        
+                    <div class="film-short-info">
+                        <h2 class="title-card-film">LITTLE WOMEN </h2>
+                        <p class="genre-card-film genre-card-film-style">Drama | 2019 <span class="rating-film">10.0</span></p>
+                    </div>
+                </li>
+                <li class="list list-item">
+                    <img
+                        src="./images/team-mykola.png"
+                        alt="{{original_title}}"
+                        class="poster-path"
+                    />        
+                    <div class="film-short-info">
+                        <h2 class="title-card-film">LITTLE WOMEN </h2>
+                        <p class="genre-card-film genre-card-film-style">Drama | 2019 <span class="rating-film">10.0</span></p>
+                    </div>
+                </li>
+        </ul>
+      </div>
+</gallery>
+  <footer>
+    <div class="container">
+      <div class="footer-page">
+          <p class="copyright">&copy; 2020 | All Rights Reserved |</p>
+          <div class="developers">
+              <p>Developed with
+                  <svg class="footer-hart">
+                      <use href="./images/icons/sprite.svg#heart"></use>
+                  </svg>
+                  by <span class="js-team-modal team-modal">GoIT Students</span>
+              </p>
+          </div>
+      </div>
+  </footer>
 </body>
-
 </html>

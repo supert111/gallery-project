@@ -1,5 +1,3 @@
-// import './sass/main.scss';
-import './styles.css';
-import './js/api/apiFetching'
-
-
+import './sass/main.scss';
+import './js/teamLightbox';
+import './js/custom';
