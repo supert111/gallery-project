@@ -1,6 +1,7 @@
 //utils
 @import './utils/variables';
 @import './utils/placeholders';
+@import './utils/visually-hidden';
 
 //base
 @import './base/common';
@@ -9,13 +10,18 @@
 //components
 @import './components/section';
 @import './components/button';
+@import './components/loader';
 @import './components/logo';
 @import './components/accent';
 
 //layout
+@import './layout/header-base-style';
 @import './layout/header-home';
-@import './layout/gellary';
+@import './layout/header-library';
+@import './layout/gallery';
+@import './layout/modal-cart';
 
 //footer
 @import './layout/team-modal';
 @import './layout/footerStyle';
+@import './layout/btn-to-top';
