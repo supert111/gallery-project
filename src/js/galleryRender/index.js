@@ -4,7 +4,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import enableModalMovieCardBtns from '../localStoragemovies/modalBtns';
 
-const { prevRef, nextRef, searchInpRef, pageNumsRef, moviesListRef } = refs;
+const { prevRef, nextRef, searchInpRef, pageNumsRef, moviesListRef, queueBtnRef, watchedBtnRef } = refs;
 
 const movie = new MoviePagination('.movies-list');
 movie.init();
@@ -52,19 +52,36 @@ function openModal(event) {
   const modal = basicLightbox.create(markup);
   modal.show();
   const closeBtn = document.querySelector('.modal-close-btn');
+  document.body.style.height = "100%";
 
   enableModalMovieCardBtns(movie, movieTitle);
 
   window.addEventListener('keydown', closeModalHandler);
+  window.addEventListener('click', closeModalHandler);
   closeBtn.addEventListener('click', () => modal.close());
+  document.body.style.overflow = "hidden";
+
+  const autoVal = document.querySelector('.basicLightbox');
 
   function closeModalHandler(event) {
-    //close modal and remove event listeners
+
+    if (event.type === 'click') {
+      autoVal.addEventListener('click', closeModal);
+      window.removeEventListener('click', closeModalHandler);
+    }
+
     if (event.code === 'Escape') {
+      document.body.style.overflow = "auto";
+      document.body.style.height = "auto";
       modal.close();
-      addToQueueBtnRef.removeEventListener('keydown', addToQueueOnClick);
-      addToWatchedBtnRef.removeEventListener('keydown', addToWatchedOnClick);
+     // addToQueueBtnRef.removeEventListener('keydown', addToQueueOnClick);
+     // addToWatchedBtnRef.removeEventListener('keydown', addToWatchedOnClick);
       window.removeEventListener('keydown', closeModalHandler);
     }
   }
 }
+
+ function closeModal() {
+   document.body.style.overflow = "auto";
+   document.body.style.height = "auto";
+  }
